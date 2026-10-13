@@ -1,13 +1,11 @@
 # 📚 QuestionBank
 
-A full-stack web application built with **Spring Boot** and **Thymeleaf** for managing and organizing question banks — designed for educators, trainers, and students.
-
----
+A full-stack web application built with Spring Boot and Thymeleaf for managing and organizing question banks — designed for educators, trainers, and students.
 
 ## 🚀 Tech Stack
 
 | Layer | Technology |
-|-------|-----------|
+|---|---|
 | Backend | Java 25, Spring Boot 4.0.6 |
 | ORM | Hibernate / Spring Data JPA |
 | Database | MySQL 9.7 |
@@ -16,7 +14,7 @@ A full-stack web application built with **Spring Boot** and **Thymeleaf** for ma
 | Server | Apache Tomcat 11 (embedded) |
 | Dev Tools | Spring Boot DevTools |
 
----
+<!-- CHECK: Java and Spring Boot versions above must match <java.version> and the parent version in pom.xml -->
 
 ## ✨ Features
 
@@ -27,25 +25,23 @@ A full-stack web application built with **Spring Boot** and **Thymeleaf** for ma
 - 🔄 Auto DDL update with Hibernate
 - 🌐 Web-based UI with Thymeleaf templates
 
----
+<!-- CHECK: remove the "Search and filter" line if the app does not have it -->
 
 ## 🛠️ Prerequisites
 
 Before running this project, make sure you have:
 
-- ☕ Java 17+ (project uses JavaSE-17 library)
-- 🐬 MySQL Server running on `localhost:3306`
+- ☕ Java 25 (same version as in pom.xml)
+- 🐬 MySQL Server running on localhost:3306
 - 📦 Maven 3.x
 - 🌱 Spring Tools Suite (STS) or any IDE
-
----
 
 ## ⚙️ Setup & Configuration
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/QuestionBank.git
+git clone https://github.com/Himaja-23110/QuestionBank.git
 cd QuestionBank
 ```
 
@@ -63,21 +59,19 @@ spring.datasource.password=root
 
 ### 3. Run the Application
 
-**Using Maven:**
+Using Maven:
+
 ```bash
 mvn spring-boot:run
 ```
 
-**Using STS:**
-- Right-click project → `Run As` → `Spring Boot App`
+Using STS: Right-click project → Run As → Spring Boot App
 
 ### 4. Access the App
 
 ```
 http://localhost:8085
 ```
-
----
 
 ## 📁 Project Structure
 
@@ -94,12 +88,10 @@ QuestionBank/
 │   │   └── resources/
 │   │       ├── templates/         # Thymeleaf HTML templates
 │   │       └── application.properties
-│   └── test/java/                 # Unit Tests
+│   └── test/java/                 # Tests
 ├── pom.xml
 └── README.md
 ```
-
----
 
 ## 🔧 Application Properties
 
@@ -121,44 +113,36 @@ logging.level.org.hibernate.SQL=DEBUG
 spring.thymeleaf.cache=false
 ```
 
----
-
 ## 🐛 Common Issues
 
 ### Port Already in Use
+
 ```
-Web server failed to start. Port 8084 was already in use.
+Web server failed to start. Port 8085 was already in use.
 ```
-**Fix:** Change port in `application.properties`:
+
+**Fix:** Change the port in `application.properties`:
+
 ```properties
-server.port=8085
+server.port=8086
 ```
+
 Or kill the process using the port:
+
 ```bash
 # Windows
-netstat -ano | findstr :8084
+netstat -ano | findstr :8085
 taskkill /PID <PID> /F
 ```
 
 ### MySQL Connection Error
-- Make sure MySQL service is running
-- Check username/password in `application.properties`
-- Database `question_bank` will be auto-created on first run
 
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
+- Make sure the MySQL service is running
+- Check the username/password in `application.properties`
+- The database `question_bank` will be auto-created on first run
 
 ## 👤 Author
 
-**Pogiri Himaja**  
-📧 pogirihimaja86@gmail.com  
-🔗 [GitHub]https://github.com/Himaja-23110
+**Pogiri Himaja**
+📧 pogirihimaja86@gmail.com
+🔗 [GitHub](https://github.com/Himaja-23110)
